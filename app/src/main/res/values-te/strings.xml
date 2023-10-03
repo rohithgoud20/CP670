@@ -2,5 +2,23 @@
 <resources>
     <string name="app_name">AndroidAssignments</string>
     <string name="hello_message">నమస్కారం</string>
-    <string name="ButtonText">I\'m a button</string>
+    <string name="ButtonText">నేను ఒక బటన్</string>
+    <string name="Login">లాగిన్</string>
+    <string name="Password">పాస్వర్డ్</string>
+    <string name="What_does_this_do">ఇది ఏమి చేస్తుంది?</string>
+    <string name="login_name">లాగిన్ పేరు</string>
+    <string name="password">పాస్వర్డ్</string>
+    <string name="radiobutton">రేడియో బటన్</string>
+    <string name="checkbox">చెక్‌బాక్స్</string>
+    <string name="Next">లాగిన్</string>
+    <string name="dialog_message">మీరు జాబితా కార్యాచరణ నుండి నిష్క్రమించాలనుకుంటున్నారా?</string>
+    <string name="dialog_title">బయటకి\n\n</string>
+    <string name="previous">మునుపటి</string>
+    <string name="toast_message_invalid_email">చెల్లని ఇమెయిల్ చిరునామా</string>
+    <string name="toast_message_invalid_password">చెల్లని పాస్వర్డ్</string>
+    <string name="switch_on">స్విచ్ ఆన్‌లో ఉంది</string>
+    <string name="switch_off">స్విచ్ ఆఫ్‌లో ఉంది</string>
+    <string name="response_1">ఇక్కడ నా స్పందన ఉంది</string>
+    <string name="ok">అవును</string>
+    <string name="cancel">రద్దు</string>
 </resources>
