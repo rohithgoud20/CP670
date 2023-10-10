@@ -4,11 +4,10 @@
 
     <queries>
         <intent>
-            <action android:name="android.media.action.IMAGE_CAPTURE">
-
-            </action>
+            <action android:name="android.media.action.IMAGE_CAPTURE"></action>
         </intent>
     </queries>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -20,12 +19,21 @@
         android:theme="@style/Theme.AndroidAssignments"
         tools:targetApi="31">
         <activity
-            android:name=".ListItemsActivity"
-            android:exported="false">
+            android:name=".ChatWindow"
+            android:exported="true">
 
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LoginActivity" />
         </activity>
+        <activity
+            android:name=".ListItemsActivity"
+            android:exported="true">
 
-
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -35,11 +43,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
+
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false">
+            android:exported="true">
 
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".LoginActivity" />
         </activity>
     </application>
 

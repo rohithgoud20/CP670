@@ -2,6 +2,8 @@ package com.example.androidassignments;
 
 
 
+import static android.widget.Toast.LENGTH_LONG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,10 +14,8 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.PersistableBundle;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
@@ -53,17 +53,17 @@ public class ListItemsActivity extends AppCompatActivity {
                 String m;
                 int d;
                 if(b){
-                    m= getString(R.string.switch_on);;
+                    m=print(getString(R.string.switch_on));
                     d= Toast.LENGTH_SHORT;
 
                 }
                 else{
-                    m=getString(R.string.switch_off);;
-                    d= Toast.LENGTH_LONG;
+                    m=print(getString(R.string.switch_off));
+                    d=Toast.LENGTH_LONG;
 
                 }
-                Toast toast = Toast.makeText(getApplicationContext(), m, d);
-                toast.show();
+              // Toast toast = Toast.makeText(getApplicationContext(), m, d);
+               //toast.show();
 
             }
         });
@@ -111,7 +111,10 @@ public class ListItemsActivity extends AppCompatActivity {
             }
         }
     }
-    public void print(String m){Toast.makeText(this,m,Toast.LENGTH_SHORT).show();}
+    public String print(String m){
+        Toast.makeText(this,m,Toast.LENGTH_SHORT).show();
+        return m;
+    }
 
     private void openLoginActivity(){
         Intent intent= new Intent( this, LoginActivity.class);

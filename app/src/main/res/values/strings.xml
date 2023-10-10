@@ -11,7 +11,7 @@
     <string name="checkbox">Checkbox</string>
     <string name="Next">Login</string>
     <string name="previous">previous</string>
-    <string name="dialog_message">Do you want to exit the List Activity?</string>
+    <string name="dialog_message"> Do you want to exit?</string>
     <string name="dialog_title">Exit\n\n</string>
     <string name="toast_message_invalid_email">Invalid email address</string>
     <string name="toast_message_invalid_password">Invalid password</string>
@@ -20,5 +20,8 @@
     <string name="response_1">Here is my response</string>
     <string name="ok">yes</string>
     <string name="cancel">no</string>
+    <string name="Button">Start Chat</string>
+    <string name="sendButton">Send</string>
+    <string name="messageEditText">Type your message...</string>
 
 </resources>

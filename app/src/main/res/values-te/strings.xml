@@ -11,7 +11,7 @@
     <string name="radiobutton">రేడియో బటన్</string>
     <string name="checkbox">చెక్‌బాక్స్</string>
     <string name="Next">లాగిన్</string>
-    <string name="dialog_message">మీరు జాబితా కార్యాచరణ నుండి నిష్క్రమించాలనుకుంటున్నారా?</string>
+    <string name="dialog_message">మీరు నిష్క్రమించాలనుకుంటే?</string>
     <string name="dialog_title">బయటకి\n\n</string>
     <string name="previous">మునుపటి</string>
     <string name="toast_message_invalid_email">చెల్లని ఇమెయిల్ చిరునామా</string>
@@ -21,4 +21,7 @@
     <string name="response_1">ఇక్కడ నా స్పందన ఉంది</string>
     <string name="ok">అవును</string>
     <string name="cancel">రద్దు</string>
+    <string name="Button">చాట్ ప్రారంభించండి</string>
+    <string name="sendButton">పంపండి</string>
+    <string name="messageEditText">మీ సందేశాన్ని టైప్ చేయండి...</string>
 </resources>

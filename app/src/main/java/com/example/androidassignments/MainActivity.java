@@ -13,25 +13,38 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private Button but;
+    private Button b2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         but=findViewById(R.id.button2);
+        b2=findViewById(R.id.button);
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                Intent intent=new Intent(MainActivity.this, ChatWindow.class);
+                startActivity(intent);
+                Log.i("MainActivity","User clicked Start Chat");
+            }
+        });
         but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(MainActivity.this,ListItemsActivity.class);
-                startActivityForResult(intent,10);
+                Intent intent = new Intent(MainActivity.this, ListItemsActivity.class);
+                startActivityForResult(intent, 10);
+                startActivity(intent);
             }
         });
+
         Log.i("MainActivity","onCreate called");
     }
     public void openLoginActivity(){
         Intent intent=new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
+
     @Override
     protected void onResume() {
 

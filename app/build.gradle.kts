@@ -3,6 +3,7 @@ plugins {
 }
 
 android {
+
     namespace = "com.example.androidassignments"
     compileSdk = 33
 
@@ -16,6 +17,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -26,6 +28,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
 }
 
 dependencies {
@@ -36,4 +39,10 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation ("androidx.test:core:1.4.0")
+
+    // AndroidX Test Runner and Rules libraries
+    androidTestImplementation ("androidx.test:runner:1.4.0")
+    androidTestImplementation ("androidx.test:rules:1.4.0")
 }
+
