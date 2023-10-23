@@ -12,7 +12,7 @@
     <string name="checkbox">చెక్‌బాక్స్</string>
     <string name="Next">లాగిన్</string>
     <string name="dialog_message">మీరు నిష్క్రమించాలనుకుంటే?</string>
-    <string name="dialog_title">బయటకి\n\n</string>
+    <string name="dialog_title">మీరు వెనక్కి వెళ్లాలనుకుంటున్నారా?</string>
     <string name="previous">మునుపటి</string>
     <string name="toast_message_invalid_email">చెల్లని ఇమెయిల్ చిరునామా</string>
     <string name="toast_message_invalid_password">చెల్లని పాస్వర్డ్</string>
@@ -24,4 +24,12 @@
     <string name="Button">చాట్ ప్రారంభించండి</string>
     <string name="sendButton">పంపండి</string>
     <string name="messageEditText">మీ సందేశాన్ని టైప్ చేయండి...</string>
+    <string name="dialog_positive_button">అవును</string>
+    <string name="dialog_negative_button">రద్దు</string>
+    <string name="title_activity_test_toolbar">టెస్ట్ టూల్ బార్</string>
+    <string name="aboutm">వెర్షన్ 1.0, రోహిత్ మిత్ర ద్వారా</string>
+    <!-- Strings used for fragments for navigation -->
+
+
+
 </resources>

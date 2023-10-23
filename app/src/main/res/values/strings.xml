@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">AndroidAssignments</string>
-    <string name="hello_message">Hello world!</string>
+    <string name="hello_message">Hello!</string>
     <string name="ButtonText">I\'m a button</string>
     <string name="Login">Login</string>
     <string name="Password">Password</string>
@@ -12,7 +12,7 @@
     <string name="Next">Login</string>
     <string name="previous">previous</string>
     <string name="dialog_message"> Do you want to exit?</string>
-    <string name="dialog_title">Exit\n\n</string>
+    <string name="dialog_title">Do you want to go back?</string>
     <string name="toast_message_invalid_email">Invalid email address</string>
     <string name="toast_message_invalid_password">Invalid password</string>
     <string name="switch_on">Switch is On</string>
@@ -23,5 +23,14 @@
     <string name="Button">Start Chat</string>
     <string name="sendButton">Send</string>
     <string name="messageEditText">Type your message...</string>
+    <string name="title_activity_test_toolbar">TestToolbar</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Next</string>
+    <string name="aboutm">Version 1.0, by Rohith Mithra</string>
+    <string name="dialog_positive_button">Yes</string>
+    <string name="dialog_negative_button">No</string>
 
 </resources>

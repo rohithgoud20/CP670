@@ -14,6 +14,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private Button but;
     private Button b2;
+    private Button testToolbarButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         but=findViewById(R.id.button2);
         b2=findViewById(R.id.button);
+        testToolbarButton = findViewById(R.id.testToolbarButton);
+        testToolbarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this, TestToolbar.class);
+                startActivity(intent);
+                Log.d("onClick", "onClick started");
+            }
+        });
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){

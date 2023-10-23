@@ -4,7 +4,7 @@
 
     <queries>
         <intent>
-            <action android:name="android.media.action.IMAGE_CAPTURE"></action>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
         </intent>
     </queries>
 
@@ -18,18 +18,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidAssignments"
         tools:targetApi="31">
+
+        <activity
+            android:name=".TestToolbar"
+            android:exported="true"
+            android:label="@string/title_activity_test_toolbar"
+            android:theme="@style/Theme.AndroidAssignments">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
         <activity
             android:name=".ChatWindow"
             android:exported="true">
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LoginActivity" />
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".ListItemsActivity"
             android:exported="true">
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
@@ -37,21 +47,20 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
 
 
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
             <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".LoginActivity" />
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LoginActivity" />
         </activity>
     </application>
 
