@@ -2,8 +2,12 @@ package com.example.androidassignments;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +25,10 @@ public class ChatWindow extends AppCompatActivity {
     private Button sendButton;
     private ArrayList<String> chatMessages;
     private ChatAdapter CA;
+    private static final String ACTIVITY_NAME = "ChatWindow";
+    private ChatDatabaseHelper chatDatabaseHelper;
+    private ArrayList<String> messages;
+
 
 
 
@@ -32,30 +40,60 @@ public class ChatWindow extends AppCompatActivity {
         messageEditText = findViewById(R.id.messageEditText);
         sendButton = findViewById(R.id.sendButton);
         chatMessages = new ArrayList<>();
-        CA= new ChatAdapter(this,android.R.layout.simple_list_item_1,chatMessages);
+        CA = new ChatAdapter(this, android.R.layout.simple_list_item_1, chatMessages);
         listView.setAdapter(CA);
+
+        messages = new ArrayList<>();
+        chatDatabaseHelper = new ChatDatabaseHelper(this);
+        SQLiteDatabase db = chatDatabaseHelper.getWritableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + ChatDatabaseHelper.TABLE_NAME, null);
+        cursor.moveToFirst();
+
+        while (!cursor.isAfterLast()) {
+            int columnIndex = cursor.getColumnIndex(ChatDatabaseHelper.KEY_MESSAGE);
+            if (columnIndex >= 0) {
+                String message = cursor.getString(columnIndex);
+                Log.i(ACTIVITY_NAME, "Retrieved Message: " + message);
+                chatMessages.add(message);
+            }
+            cursor.moveToNext();
+        }
+        Log.i(ACTIVITY_NAME, "Cursor's column count = " + cursor.getColumnCount());
+
+
+        for (int i = 0; i < cursor.getColumnCount(); i++) {
+            Log.i(ACTIVITY_NAME, "Column Name: " + cursor.getColumnName(i));
+        }
+
+
+        cursor.close();
+        CA.notifyDataSetChanged();
+
 
 
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                EditText textInput = findViewById(R.id.messageEditText);
-                String message = messageEditText.getText().toString().trim();
-                if (!message.isEmpty()) {
-                    // Add the new message to your data source (e.g., ArrayList)
-                    CA.add(message);
-
-                    // Notify the adapter that the data has changed
-                    CA.notifyDataSetChanged();
-
-                    // Clear the EditText for a new message
-                    messageEditText.setText("");
-                }
+            public void onClick(View v) {
+                String newMessage = messageEditText.getText().toString();
+                chatMessages.add(newMessage);
+                CA.notifyDataSetChanged();
+                messageEditText.setText("");
 
 
+                SQLiteDatabase db = chatDatabaseHelper.getWritableDatabase();
+                ContentValues values = new ContentValues();
+                values.put(ChatDatabaseHelper.KEY_MESSAGE, newMessage);
+                db.insert(ChatDatabaseHelper.TABLE_NAME, null, values);
             }
         });
     }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        chatDatabaseHelper.close();
+    }
+
 
     private class ChatAdapter extends ArrayAdapter<String> {
 
